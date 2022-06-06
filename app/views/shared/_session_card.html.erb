@@ -1,0 +1,13 @@
+<div class="flex flex-col shadow-md px-4 sm:px-6 sm:mb-6 md:px-8 md:mb-20 lg:px-10 py-8 rounded-md w-full max-w-md bg-white mt-20">
+  <div class="font-medium self-center text-xl sm:text-2xl text-teal-500">
+    <%= content[:title] %>
+  </div>
+  
+  <% if content[:login] %>
+    <div class="relative mt-10 h-px bg-gray-300"></div>
+  <% end %>
+
+  <div class="mt-10">
+    <%= yield %>
+  </div>
+</div>

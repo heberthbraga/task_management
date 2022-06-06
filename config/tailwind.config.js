@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  important: true,
   content: [
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
@@ -12,7 +13,7 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
       screens: {
-        sm: '480px',
+        sm: '640px',
         md: '768px',
         lg: '976px',
         xl: '1440px'
@@ -20,6 +21,10 @@ module.exports = {
       colors: {
         cream: '#FBF8F1',
         'gray-vintage': '#F2F2F2',
+        secondary: '#38b2ac',
+        'teal-origin': '#A5CFE3',
+        'mint': '#DDFFE7',
+        'royal-blue': '#0C1446'
       },
     },
   },

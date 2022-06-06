@@ -1,0 +1,12 @@
+<header class="flex items-center justify-between flex-wrap bg-gray-vintage px-2 py-3">
+  <div class="items-center flex-shrink-0 mr-6 ml-6">
+    <a href="/" class="flex cursor-pointer items-center">
+      <%= render 'shared/logo', { fill_color: 'fill-teal-500', stroke_color: 'stroke-teal-500', text_color: 'text-teal-500' } %>
+    </a>
+  </div>
+  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto lg:justify-end mr-2">
+    <a hrf="#" class="nav-bar-item">About</a>
+      <%= link_to 'Sign In', new_user_session_path, class: 'nav-bar-item' %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-bar-item' %>
+  </div>
+</header>

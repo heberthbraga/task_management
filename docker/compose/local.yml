@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  db:
+    container_name: task-management-db
+    platform: linux/x86_64
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5457:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+  redis:
+    image: redis:6.0
+    hostname: task-management-redis
+    container_name: task-management-redis
+    command: redis-server --requirepass taskmgmt
+    ports:
+      - "6381:6379"
+
+volumes:
+  pg_data:

@@ -9,13 +9,13 @@ default: &default
 
 development:
   <<: *default
-  database: project_management_development
+  database: task_management_development
 
 test:
   <<: *default
-  database: project_management_test
+  database: task_management_test
 
 production:
   adapter: postgresql
-  database: project_management_production
+  database: task_management_production
   encoding: unicode

@@ -68,5 +68,13 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000, :protocol => "http" }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = { :address => ENV.fetch('SMTP_ADDRESS'), :port => ENV.fetch('SMTP_PORT') }
+  config.action_mailer.preview_path = "#{Rails.root}/tmp/mailers/previews"
+  
+  config.cache_store = :redis_cache_store, { url: "#{ENV.fetch('REDIS_URL')}:#{ENV.fetch('REDIS_PORT')}/#{ENV.fetch('REDIS_DATABASE')}" }
 end

@@ -5,7 +5,7 @@ User.find_or_create_by(email: 'admin@example.com') do |admin|
   admin.last_name = 'Admin'
   admin.password = 'Test1234!'
   admin.gender = 'male'
-  admin.birthdate = DateTime.now
+  admin.birthdate = Date.strptime('04/18/1982', '%m/%d/%Y')
   admin.add_role(:admin)
 end
 

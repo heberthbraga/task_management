@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/heberthbraga/Workspace/MyProjects/task_management'
+docker-compose -f docker/compose/local.yml -p task_management down --volumes
+make: Leaving directory `/Users/heberthbraga/Workspace/MyProjects/task_management'
+ 

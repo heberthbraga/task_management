@@ -2,12 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .nav-bar-item {
+    @apply block mt-4 lg:inline-block lg:mt-0 text-gray-800 hover:text-gray-600 mr-4 hover:cursor-pointer;
   }
-}
 
-*/
+  .input-wrapper {
+    @apply flex flex-col mb-6;
+  }
+
+  .input {
+    @apply text-gray-400 text-sm sm:text-base placeholder-gray-300 pr-4 rounded-lg border-gray-300 w-full py-2 focus:outline-none focus:border-teal-500;
+  }
+
+  .input-with-icon {
+    @apply pl-10;
+  }
+
+  .form-label {
+    @apply mb-1 text-xs sm:text-sm tracking-wide text-gray-600;
+  }
+
+  .input-icon {
+    @apply inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-300;
+  }
+
+  .btn {
+    @apply flex items-center justify-center focus:outline-none rounded py-2 w-full;
+  }
+
+  .btn-animation {
+    @apply transition duration-150 ease-in;
+  }
+
+  .btn-teal {
+    @apply text-white text-sm sm:text-base bg-teal-500;
+  }
+
+  .btn-teal:hover {
+    @apply bg-teal-600;
+  }
+
+  .select-text {
+    @apply text-gray-400;
+  }
+
+  .date-field {
+    @apply pl-10;
+  }
+
+  .sidebar--width {
+    @apply w-64;
+  }
+
+  .half_rotation {
+    @apply rotate-180;
+  }
+
+  .full_rotation {
+    @apply rotate-0;
+  }
+
+  .logo-icon {
+    @apply flex cursor-pointer items-center mt-4 mx-2;
+  }
+
+  .border-1 {
+    border-width: 1px;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-b-sm border-1 text-sm font-semibold shadow-sm p-2;
+  }
+  
+  .form-input {
+    @apply text-sm text-slate-800 bg-white border;
+  }
+
+}

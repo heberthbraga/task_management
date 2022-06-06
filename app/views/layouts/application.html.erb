@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>ProjectManagement</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  </head>
-
-  <body class="min-h-screen bg-slate-50">
-    <%= render 'shared/header' %>
-    <main class="container mx-auto px-5 flex bg-grey-vintage">
+<%= render 'shared/main', { title: 'Project Management', stylesheets: ['application'] } do %>
+  <body class="flex flex-col h-screen justify-between font-sans bg-slate-50">
+    <%= render 'shared/navigation' %>
+    <main class="mb-auto bg-grey-vintage">
       <%= yield %>
     </main>
     <%= render 'shared/footer' %>
   </body>
-</html>
+<% end %>

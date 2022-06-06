@@ -1,0 +1,12 @@
+<head>
+  <title><%= title %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  <% stylesheets.each do |stylesheet| %>
+    <%= stylesheet_link_tag stylesheet, "data-turbo-track": "reload" %>
+  <% end %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <%= favicon_link_tag asset_path('logo.jpg') %>
+</head>
