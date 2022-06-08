@@ -50,4 +50,22 @@ class ApplicationPolicy
 
     attr_reader :user, :scope
   end
+
+  protected
+
+  def admin?
+    user.admin? && owner?
+  end
+
+  def any_user?
+    user.has_any_role?(:admin, :registered) && owner?
+  end
+
+  def registered_user?
+    user.registered? && owner?
+  end
+
+  def owner?
+    user == record
+  end
 end

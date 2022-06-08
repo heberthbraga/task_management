@@ -29,4 +29,10 @@ class User < ApplicationRecord
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
+
+  def role_type
+    role_type = 'registered'
+    role_type = 'admin' if self.admin?
+    role_type
+  end
 end

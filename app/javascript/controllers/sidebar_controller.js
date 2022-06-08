@@ -7,7 +7,19 @@ export default class extends Controller {
   }
   static targets = ['button', 'collapseIcon', 'container',  'anchorName', 'collapsedLogo', 'expandedLogo']
 
+  connect() {
+    const currentExpandedValue = JSON.parse(localStorage.getItem('currentExpandedValue'))
+    
+    if (currentExpandedValue) {
+      this.collapse()
+    } else {
+      this.expand()
+    }
+  }
+
   toggle() {
+    localStorage.setItem('currentExpandedValue', this.expandedValue)
+    
     if (this.expandedValue) {
       this.collapse()
     } else {
@@ -21,7 +33,6 @@ export default class extends Controller {
     this.collapseIconTarget.classList.add('full_rotation', 'mr-4')
     this.containerTarget.classList.remove('w-64')
     this.anchorNameTargets.forEach(anchorName => {
-      console.log(anchorName)
       anchorName.classList.add('hidden')
     });
     this.collapsedLogoTarget.classList.remove('hidden')

@@ -1,6 +1,10 @@
-<%= link_to path, class: 'inline-flex gap-x-2 items-center py-2.5 px-6 text-white bg-teal-700 rounded-md hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-1' do %>
+<%= link_to(
+  path, 
+  class: 'inline-flex gap-x-1 items-center py-2.5 px-4 text-white bg-teal-700 rounded-md hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-1',
+  data: { turbo_frame: turbo_frame_id }
+) do %>
   <svg class="w-6 h-6 fill-current" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
   </svg>
-  <span class="text-md font-semibold tracking-wide px-2"><%= title %></span>
+  <span class="text-md font-semibold tracking-wide px-2"><%= t title %></span>
 <% end %>

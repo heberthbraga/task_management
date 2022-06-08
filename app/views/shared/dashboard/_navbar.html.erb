@@ -1,8 +1,8 @@
 <div class="flex items-center justify-between py-6 px-10">
   <div>
-    <h1 class="text-2xl font-semibold leading-relaxed text-gray-700">Heading</h1>
-    <p class="text-sm font-medium text-gray-500">This is the headline.</p>
+    <h1 class="text-2xl font-semibold leading-relaxed text-royal-blue"><%= t heading %></h1>
+    <p class="text-sm font-medium text-gray-500"><%= t headline %></p>
   </div>
-  <%= render 'shared/dashboard/add_button', { path: '', title: 'Create Project' } %>
+  <%= render 'shared/dashboard/add_button', { path: new_path, title: add_button_title, turbo_frame_id: turbo_frame_id } %>
 </div>
 <div class="relative h-px bg-slate-300"></div>

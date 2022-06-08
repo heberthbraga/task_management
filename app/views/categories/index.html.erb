@@ -1,0 +1,7 @@
+<div class="flex flex-col">
+  <%= render_navbar(category_options) %>
+
+  <%= turbo_frame_tag 'category_container', target: '_top' do %>
+    <div>List categories</div>
+  <% end %>
+</div>
