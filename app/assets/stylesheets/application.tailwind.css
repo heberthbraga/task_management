@@ -83,4 +83,8 @@
     @apply text-sm text-slate-800 bg-white border;
   }
 
+  .sidebar-item-selected {
+    @apply !bg-teal-600;
+  }
+
 }

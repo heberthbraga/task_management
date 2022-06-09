@@ -2,25 +2,39 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="sidebar"
 export default class extends Controller {
-  static values = {
-    expanded: Boolean
-  }
-  static targets = ['button', 'collapseIcon', 'container',  'anchorName', 'collapsedLogo', 'expandedLogo']
+  static values = { expanded: Boolean }
+  static targets = ['button', 'collapseIcon', 'container',  'anchorName', 'collapsedLogo', 'expandedLogo', 'link']
 
   connect() {
     const currentExpandedValue = JSON.parse(localStorage.getItem('currentExpandedValue'))
     
-    if (currentExpandedValue) {
-      this.collapse()
-    } else {
-      this.expand()
-    }
+    this.updateContainer(currentExpandedValue)
+
+    this.displaySelectedItem(window.location.href)
   }
 
-  toggle() {
+  toggleExpand() {
     localStorage.setItem('currentExpandedValue', this.expandedValue)
     
-    if (this.expandedValue) {
+    this.updateContainer(this.expandedValue)
+  }
+
+  pushCurrentSidebarLink(event) {
+    this.displaySelectedItem(event.currentTarget.href)
+  }
+
+  displaySelectedItem(currentUrl) {
+    this.linkTargets.forEach(anchorElem => {
+      anchorElem.classList.remove('sidebar-item-selected')
+
+      if (anchorElem.href === currentUrl) {
+        anchorElem.classList.add('sidebar-item-selected')
+      }
+    })
+  }
+
+  updateContainer(currentExpandedValue) {
+    if (currentExpandedValue) {
       this.collapse()
     } else {
       this.expand()

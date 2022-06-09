@@ -5,4 +5,7 @@
 import { application } from "./application"
 
 import SidebarController from "./sidebar_controller.js"
+import NavigationController from "./navigation_controller.js"
+
 application.register("sidebar", SidebarController)
+application.register("navigation", NavigationController)

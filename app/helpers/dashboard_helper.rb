@@ -22,11 +22,16 @@ module DashboardHelper
 
   def render_sibebar_item(item)
     content_tag(:li) do
-      link_to(item[:path], 
-        class: 'text-slate-100 flex p-2 text-base gap-x-4 items-center rounded-lg hover:bg-teal-600'
+      link_to(item[:path],
+        id: "#{item[:name].downcase}-link-id",
+        class: 'text-slate-100 flex p-2 text-base gap-x-4 items-center rounded-lg hover:bg-teal-600',
+        data: { 
+          sidebar_target: 'link',
+          action: 'click->sidebar#pushCurrentSidebarLink'
+        },
       ) do
         embedded_svg_icon(item[:icon]).concat(
-        content_tag(:span, data: { 'sidebar-target': 'anchorName' } ) do
+        content_tag(:span, data: { sidebar_target: 'anchorName' } ) do
           item[:name]
         end)
       end
