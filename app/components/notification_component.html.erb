@@ -1,0 +1,37 @@
+<div class="flex flex-col mt-2 sm:mx-4 mx-4" data-notification-timeout="<%= data[:timeout] %>" data-controller="notification">
+  <div class="flex items-start bg-white shadow-sm rounded-lg pointer-events-auto px-4 py-2 overflow-hidden">
+    <div class="flex-shrink-0">
+      <div class="<%= icon_color_class %>">
+        <i class="h-4 w-4 fas <%= icon_class %>"></i>
+      </div>
+    </div>
+    <div class="flex-1 px-4">
+      <p class="text-base leading-5 font-medium <%= icon_color_class %>">
+        <%= data[:title] %>
+      </p>
+      <% if data[:body] %>
+        <p class="mt-1 text-sm leading-5 text-gray-500">
+          <%= data[:body] %>
+        </p>
+      <% end %>
+      <% if data[:action].present? %>
+        <div class="mt-2">
+          <button class="text-sm leading-5 font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+            <%= data.dig(:action, :name) %>
+          </button>
+          <button class="ml-6 text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+            <%= t('common.dismiss') %>
+          </button>
+        </div>
+      <% end %>
+    </div>
+    <div class="flex-shrink-0 flex">
+      <button class="inline-flex text-slate-400 hover:text-red-500 focus:outline-none focus:text-red-500 transition ease-in-out duration-150" data-action="click->notification#close">
+        <i class="h-4 w-4 fas fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+  <% if data[:countdown] %>
+    <div class="bg-indigo-600 rounded-lg h-2 w-0" data-notification-target="countdown"></div>
+  <% end %>
+</div>

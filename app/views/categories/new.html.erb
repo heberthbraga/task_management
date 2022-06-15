@@ -1,3 +1,9 @@
 <turbo-frame id="category_container">
-  <%= render 'form', category: @object %>
+  <%= render 'shared/vertical_container' do %>
+    <div 
+      class="flex flex-col shadow-sm px-4 sm:px-6 sm:mb-6 md:px-8 md:mb-20 lg:px-10 py-8 rounded-md w-full max-w-2xl bg-white mt-10"
+    >
+      <%= render 'form', category: @object, button_title: 'common.save' %>
+    </div>
+  <% end %>
 </turbo-frame>

@@ -1,0 +1,17 @@
+<%= turbo_frame_tag dom_id(category), class: 'w-full bg-white' do %>
+  <div class="flex content-center items-center justify-between shadow-sm p-2 px-4 rounded-md">
+    <h2 class="pl-2 text-base font-semibold text-slate-800"><%= category.name %></h2>
+    <div class="flex justify-end content-center items-center gap-x-2 m-w pr-2">
+      <%= link_to edit_category_path(category), class: 'items-center content-center', data: { turbo_frame: dom_id(category) } do %>
+        <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24" height="24">
+            <path class="fill-current icon-warning-dark" d="M 18.400391 2 C 18.100391 2 17.899219 2.1007812 17.699219 2.3007812 L 15.707031 4.2929688 L 14.292969 5.7070312 L 3 17 L 3 21 L 7 21 L 21.699219 6.3007812 C 22.099219 5.9007812 22.099219 5.3003906 21.699219 4.9003906 L 19.099609 2.3007812 C 18.899609 2.1007812 18.700391 2 18.400391 2 z M 18.400391 4.4003906 L 19.599609 5.5996094 L 18.306641 6.8925781 L 17.107422 5.6933594 L 18.400391 4.4003906 z M 15.693359 7.1074219 L 16.892578 8.3066406 L 6.1992188 19 L 5 19 L 5 17.800781 L 15.693359 7.1074219 z"/>
+        </svg>
+      <% end %>
+      <%= button_to category, method: :delete, class: 'items-center content-center', form: { class: 'flex flex-col', data: { turbo_confirm: "Are you sure?" } } do %>
+        <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24" height="24">
+          <path class="fill-current icon-danger" d="M 10 2 L 9 3 L 4 3 L 4 5 L 5 5 L 5 20 C 5 20.522222 5.1913289 21.05461 5.5683594 21.431641 C 5.9453899 21.808671 6.4777778 22 7 22 L 17 22 C 17.522222 22 18.05461 21.808671 18.431641 21.431641 C 18.808671 21.05461 19 20.522222 19 20 L 19 5 L 20 5 L 20 3 L 15 3 L 14 2 L 10 2 z M 7 5 L 17 5 L 17 20 L 7 20 L 7 5 z M 9 7 L 9 18 L 11 18 L 11 7 L 9 7 z M 13 7 L 13 18 L 15 18 L 15 7 L 13 7 z"/>
+        </svg>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -6,11 +6,30 @@ export default class extends Controller {
 
   connect() {
     console.log("Navigation controller conected.")
+
+    const lastFrameVisit = localStorage.getItem('lastFrameVisit')
+    
+    if (lastFrameVisit) {
+      const [frameId, frameSrc] = lastFrameVisit.split('::')
+
+      const turboFrame = document.getElementById(frameId)
+      turboFrame.src = frameSrc
+    }
   }
 
   push(event) {
-    let value = event.detail.url
+    const frameId = event.currentTarget.getAttribute('data-turbo-frame')
+    
+    const turboFrameElem = document.getElementById(frameId)
 
-    console.log('Value', value)
+    const turboSrc = turboFrameElem.src
+
+    if (turboSrc) {
+      localStorage.setItem('lastFrameVisit', `${frameId}::${turboSrc}`)
+    }
+  }
+
+  disconnect() {
+    localStorage.removeItem('lastFrameVisit')
   }
 }

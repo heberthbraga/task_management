@@ -1,0 +1,5 @@
+<div id="notifications" class="flex flex-col items-center justify-center mt-2 gap-y-2">
+  <% flash.each do |flash_type, message| %>
+    <%= render NotificationComponent.new(type: flash_type, data: message) %>
+  <% end %>
+</div>

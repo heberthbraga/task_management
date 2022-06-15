@@ -5,7 +5,8 @@ module.exports = {
   content: [
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './app/views/**/*.{erb,haml,html,slim}'
+    './app/views/**/*.{erb,haml,html,slim}',
+    './app/components/**/*.{rb,erb,haml,html,slim}'
   ],
   theme: {
     extend: {
@@ -24,7 +25,8 @@ module.exports = {
         secondary: '#38b2ac',
         'teal-origin': '#A5CFE3',
         'mint': '#DDFFE7',
-        'royal-blue': '#0C1446'
+        'royal-blue': '#0C1446',
+        'seafonan-green': '#87ACA3'
       },
     },
   },

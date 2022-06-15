@@ -1,7 +1,9 @@
 <div class="flex flex-col">
   <%= render_navbar(category_options) %>
 
-  <%= turbo_frame_tag 'category_container' do %>
-    <div>List categories</div>
+  <%= turbo_frame_tag 'category_container', target: '_top' do %>
+    <div class="flex flex-col items-center justify-between py-6 px-10 gap-y-1">
+      <%= render @objects %>
+    </div>
   <% end %>
 </div>
