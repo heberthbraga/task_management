@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="flex-1 px-4">
-      <p class="text-base leading-5 font-medium <%= icon_color_class %>">
+      <p class="text-base leading-5 mt-0.5 font-medium <%= icon_color_class %>">
         <%= data[:title] %>
       </p>
       <% if data[:body] %>
@@ -26,7 +26,7 @@
       <% end %>
     </div>
     <div class="flex-shrink-0 flex">
-      <button class="inline-flex text-slate-400 hover:text-red-500 focus:outline-none focus:text-red-500 transition ease-in-out duration-150" data-action="click->notification#close">
+      <button class="inline-flex text-slate-400 hover:text-red-500 focus:outline-none focus:text-red-500 mt-0.5 transition ease-in-out duration-150" data-action="click->notification#close">
         <i class="h-4 w-4 fas fa-xmark"></i>
       </button>
     </div>

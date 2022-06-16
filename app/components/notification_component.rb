@@ -16,7 +16,7 @@ private
   def prepare_data(data)
     case data
     when Hash
-      data
+      data.deep_symbolize_keys
     else
       { title: data }
     end
@@ -38,7 +38,7 @@ private
   def icon_color_class
     case type
     when 'success'
-      'text-green-400'
+      'text-green-600'
     when 'error'
       'text-red-800'
     when 'alert'

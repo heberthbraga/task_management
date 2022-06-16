@@ -5,6 +5,7 @@ export default class extends Controller {
   static targets = ['countdown']
 
   connect() {
+    console.log('Connecting to notification controller')
     const timeoutSeconds = parseInt(this.data.get("timeout"))
 
     this.element.classList.remove('hidden')
@@ -19,7 +20,7 @@ export default class extends Controller {
     
     this.timeoutId = setTimeout(() => {
       this.close();
-    }, timeoutSeconds * 1000 + 500);
+    }, timeoutSeconds * 1000 + 5000);
   }
 
   stop() {

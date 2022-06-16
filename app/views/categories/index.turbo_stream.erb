@@ -1,0 +1,7 @@
+<%= turbo_stream.prepend "flash", partial: 'shared/flash' %>
+
+<%= turbo_stream.replace 'category_container' do %>
+  <div class="flex flex-col items-center justify-between py-6 px-10 gap-y-1">
+    <%= render @objects %>
+  </div>
+<% end %>

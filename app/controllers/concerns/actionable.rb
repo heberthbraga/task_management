@@ -22,12 +22,10 @@ module Actionable
   def index
     @objects = policy_scope(self.class.model_clazz)
 
-    flash[:notice] = { 
-      title: 'Discussion moved', 
-      body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.',
-      timeout: 5,
-      countdown: true
-    }
+    respond_to do |format|
+      format.html { render :index }
+      format.turbo_stream
+    end
   end
 
   def new
@@ -37,12 +35,14 @@ module Actionable
   def create
     @object = self.class.model_clazz.new(permit_params)
 
-    if @object.save
-      respond_to do |format|
-        format.html { redirect_to objects_path, success: "#{self.class.model_clazz} successfully created." }
+    respond_to do |format|
+      if @object.save
+        message = { title: "#{self.class.model_clazz} was successfully created." }
+  
+        format.html { redirect_to objects_path, success: message }
+      else
+        format.html { render :new, status: :unprocessable_entity }
       end
-    else
-      render :new, status: :unprocessable_entity
     end
   end
 
@@ -53,13 +53,15 @@ module Actionable
   end
 
   def update
-    if @object.update(permit_params)
-      respond_to do |format|
-        format.html { redirect_to objects_path, success: "#{self.class.model_clazz} successfully updated." }
-        format.turbo_stream
+    respond_to do |format|
+      if @object.update(permit_params)
+        message = { title: "#{self.class.model_clazz} was successfully updated." }
+
+        format.html { redirect_to objects_path, success: message }
+        format.turbo_stream { flash.now[:success] = message }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
       end
-    else
-      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -67,7 +69,10 @@ module Actionable
     @object.destroy!
 
     respond_to do |format|
-      format.html { redirect_to objects_path, success: 'Deleted!' }
+      message = { title: "#{self.class.model_clazz} was deleted." }
+
+      format.html { redirect_to objects_path, success: flash }
+      format.turbo_stream { flash.now[:success] = message }
     end
   end
 
