@@ -67,9 +67,9 @@ module DashboardHelper
     [
       [
         dashboard_side_path,
-        { name: 'Activities', icon: 'draft', path: '#' },
-        { name: 'Tasks', icon: 'clipboard', path: '#' },
-        { name: 'Analytics', icon: 'graph', path: '#' }
+        { name: 'Activities', icon: 'draft', path: activities_path },
+        { name: 'Tasks', icon: 'clipboard', path: tasks_path }
+        # { name: 'Analytics', icon: 'graph', path: '#' }
       ],
       bottom_sidebar
     ]

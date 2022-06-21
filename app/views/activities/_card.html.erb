@@ -1,0 +1,33 @@
+<div class="flex flex-col col-span-full sm:col-span-8 xl:col-span-4 bg-white shadow-lg rounded-2xl border border-slate-50">
+    <header class="flex justify-between items-start p-4">
+      <span class="text-sm text-gray-500">Jun 20, 2022</span>
+      <div class="cursor-pointer">
+        <i class="h-4 w-4 fas fa-ellipsis-v"></i>
+      </div>
+    </header>
+    <div class="flex flex-col items-center mb-3 mt-4">
+      <h2 class="font-semibold text-slate-800 text-lg cursor-pointer">Supermarket</h2>
+      <p class="text-sm text-gray-500">Food, Grocery</p>
+    </div>
+
+    <%= render ProgressComponent.new(space_x: 4) %>
+    
+    <div class="flex justify-between items-center border-t-1 mt-4 p-4">
+      <div class="flex justify-center items-center">
+        <div class="w-8 h-8 -mx-2 overflow-hidden">
+          <img class="rounded-full border border-gray-100 shadow-sm" src="https://randomuser.me/api/portraits/women/81.jpg" alt="user image" />
+          <!-- <div class="absolute top-0 right-0 h-3 w-3 my-1 border-2 border-white rounded-full bg-green-400 z-2"></div> -->
+        </div>
+        <div class="w-8 h-8 -mx-2 overflow-hidden">
+          <img class="rounded-full border border-gray-100 shadow-sm" src="https://randomuser.me/portraits/men/83.jpg" alt="user image" />
+          <!-- <div class="absolute top-0 right-0 h-3 w-3 my-1 border-2 border-white rounded-full bg-green-400 z-2"></div> -->
+        </div>
+        <!-- <%= link_to('#', class: 'inline-flex justify-center items-center w-8 h-8 ml-5 bg-indigo-300 text-indigo-800 rounded-full') do %>
+          +
+        <% end %> -->
+      </div>
+      <div class="rounded-xl bg-indigo-300">
+        <p class="text-sm text-indigo-800 font-semibold py-2 px-4">2 Days Left</p>
+      </div>
+    </div>
+</div>

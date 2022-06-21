@@ -1,0 +1,9 @@
+<div id="<%= id %>" class="flex items-start">
+  <% options[0...-1].each do |option| %>
+    <%= render_pane_option(option) %>
+    <div class="flex flex-col h-full justify-center mx-6">
+      <span class="items-center text-gray-300 text-xs">&#x25CB;</span>
+    </div>
+  <% end %>
+  <%= render_pane_option(options.last) %>
+</div>

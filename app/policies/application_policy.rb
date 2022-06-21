@@ -4,6 +4,8 @@ class ApplicationPolicy
   attr_reader :user, :record
 
   def initialize(user, record)
+    p user
+    p "record #{record}"
     @user = user
     @record = record
   end
@@ -38,6 +40,8 @@ class ApplicationPolicy
 
   class Scope
     def initialize(user, scope)
+      p user
+      p "scope #{scope}"
       @user = user
       @scope = scope
     end
@@ -58,11 +62,11 @@ class ApplicationPolicy
   end
 
   def any_user?
-    user.has_any_role?(:admin, :registered) && owner?
+    user.has_any_role?(:admin, :registered)
   end
 
   def registered_user?
-    user.registered? && owner?
+    user.registered?
   end
 
   def owner?

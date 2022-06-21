@@ -26,7 +26,7 @@ export default class extends Controller {
   displaySelectedItem(currentUrl) {
     this.linkTargets.forEach(anchorElem => {
       anchorElem.classList.remove('sidebar-item-selected')
-
+      
       if (anchorElem.href === currentUrl) {
         anchorElem.classList.add('sidebar-item-selected')
       }

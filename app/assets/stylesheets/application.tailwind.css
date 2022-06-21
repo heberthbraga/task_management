@@ -89,6 +89,10 @@
     border-bottom-width: 1px;
   }
 
+  .border-t-1 {
+    border-top-width: 1px;
+  }
+
   .btn {
     @apply inline-flex items-center justify-center rounded-b-sm border-1 text-sm font-semibold shadow-sm p-2;
   }

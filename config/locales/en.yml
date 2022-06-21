@@ -19,6 +19,13 @@ en:
     add_button: Create Category
     placeholder:
       name: Enter name
+  activities:
+    heading: Activities
+    add_button: Create Activity
+    statuses:
+      in_progress: In Progress
+      upcoming: Upcoming
+      completed: Completed
   forms:
     messages:
       create: '%{entity} successfully created'

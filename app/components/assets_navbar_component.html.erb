@@ -1,0 +1,9 @@
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-y-2 lg:py-6 lg:px-10">
+  <h1 class="text-2xl font-semibold leading-relaxed text-royal-blue sm:mt-4 sm:ml-4"><%= t heading %></h1>
+  <%= render SearchComponent.new %>
+  <%= render 'shared/dashboard/add_button', { path: button_path, title: button_title, turbo_frame_id: frame_id } %>
+</div>
+
+<div id="flash">
+  <%= render 'shared/flash' %>
+</div>

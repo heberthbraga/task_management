@@ -14,7 +14,7 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
       screens: {
-        sm: '640px',
+        sm: {'min': '320px', 'max': '680px' },
         md: '768px',
         lg: '976px',
         xl: '1440px'
@@ -33,6 +33,6 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
+    require('@tailwindcss/typography')
   ]
 }
